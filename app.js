@@ -15,9 +15,9 @@ navBtn.addEventListener('click', function(event){
 });
 
 function render(genre){
-
-    if (main.hasChildNodes()){
-        main.firstChild.remove();
+    
+    while (main.firstChild) {
+        main.removeChild(main.firstChild);
     }
 
     let filmCards = document.createElement('div');
@@ -45,6 +45,7 @@ function render(genre){
         rating.classList ='film__rating';
         director.classList ='film__director';  
         filmData.classList='film__data film__data-active';
+        card.classList = 'main__container__item';
         
         title.textContent=`${film.title}`;
         year.textContent=`year: ${film.year}`;
@@ -54,15 +55,16 @@ function render(genre){
         
         filmData.append( title, year, rating, director );
         card.append( cover, filmData, filmDescr );
-        card.classList = 'main__container__item';
         filmCards.append(card);
 
         card.addEventListener('click', function() {
             filmDescr.classList.toggle('film__descr-active');
             cover.classList.toggle('film__cover-active');
             filmData.classList.toggle('film__data-active');
-         })
+        
+        })
     });
 
     main.append(filmCards);
+
 };
