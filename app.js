@@ -318,7 +318,7 @@ function render(genre){
     let filmCards = document.createElement('div');
     filmCards.className="main__container";
     
-    genre.forEach( function(film,index){
+    genre.forEach( function(film){
 
         const filmData = document.createElement('div');
         const filmDescr = document.createElement('p');
