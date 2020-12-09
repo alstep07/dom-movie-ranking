@@ -64,7 +64,7 @@ function render(genre){
         
         })
     });
-
+    
     main.append(filmCards);
 
 };
