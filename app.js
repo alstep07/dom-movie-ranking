@@ -1,41 +1,4 @@
 const movies = {
-    all: [
-        {
-        title: 'The Shawshank Redemption',
-        year: 1994,
-        rating: 9.3,
-        director: 'Frank Darabont',
-        description: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.'
-        },
-        {
-        title: 'The Godfather',
-        year: 1972,
-        rating: 9.2,
-        director: 'Francis Ford Coppola',
-        description: 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.'
-        },
-        {
-        title: 'The Godfather: Part II',
-        year: 1974,
-        rating: 9.0,
-        director: 'Francis Ford Coppola',
-        description: 'The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.'
-        },
-        {
-        title: 'The Dark Knight',
-        year: 2008,
-        rating: 9.0,
-        director: 'Christopher Nolan',
-        description: 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.' 
-        },
-        {
-        title: '12 Angry Men',
-        year: 1957,
-        rating: 9.0,
-        director: 'Sidney Lumet',
-        description: 'A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.'
-        }
-    ],
     action: [
         {
         title: 'The Dark Knight',
@@ -258,20 +221,58 @@ const movies = {
          director: 'Marwan Hamed',
          description: 'The story of Dr. Yehia, a psychotherapist at Al Abbasia hospital. He works in the department treating the criminally insane, only to find his best friend to be one of the patients. Trying to help his friend he finds himself going down the rabbit hole.'
         }
+    ],
+    all: [
+        {
+        title: 'The Shawshank Redemption',
+        year: 1994,
+        rating: 9.3,
+        director: 'Frank Darabont',
+        description: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.'
+        },
+        {
+        title: 'The Godfather',
+        year: 1972,
+        rating: 9.2,
+        director: 'Francis Ford Coppola',
+        description: 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.'
+        },
+        {
+        title: 'The Godfather: Part II',
+        year: 1974,
+        rating: 9.0,
+        director: 'Francis Ford Coppola',
+        description: 'The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.'
+        },
+        {
+        title: 'The Dark Knight',
+        year: 2008,
+        rating: 9.0,
+        director: 'Christopher Nolan',
+        description: 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.' 
+        },
+        {
+        title: '12 Angry Men',
+        year: 1957,
+        rating: 9.0,
+        director: 'Sidney Lumet',
+        description: 'A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.'
+        }
     ]
 };
 
-
 const main = document.querySelector('.main__container');
-const navBtn = document.querySelectorAll('.navbar__item');
-const genres = ['action', 'drama', 'comedy', 'western', 'romance', 'horror'];
+const navBtn = document.querySelector('.navbar__list');
+const headerBtn = document.querySelector('.header__title');
 
-render('all');
+render(movies.all);
 
-navBtn.forEach(function (btn,i){
-    btn.addEventListener('click', function(){
-        render(genres[i]);
-    })
+headerBtn.addEventListener('click', function() {
+    render(movies.all);
+});
+
+navBtn.addEventListener('click', function(event){
+        render(movies[event.path[1].id]);
 });
 
 function render(genre){
@@ -283,17 +284,17 @@ function render(genre){
     let filmCards = document.createElement('div');
     filmCards.className="main__genre";
     
-    movies[genre].forEach( function(film,index){
+    genre.forEach( function(film,index){
 
-        let filmData = document.createElement('div');
-        let filmDescr = document.createElement('p');
-        let card = document.createElement('div');
-        let cover = document.createElement('img');
-        let title = document.createElement('h2');
-        let year = document.createElement('p');
-        let rating = document.createElement('p')
-        let descr = document.createElement('p');
-        let director = document.createElement('p');
+        const filmData = document.createElement('div');
+        const filmDescr = document.createElement('p');
+        const card = document.createElement('div');
+        const cover = document.createElement('img');
+        const title = document.createElement('h2');
+        const year = document.createElement('p');
+        const rating = document.createElement('p')
+        const descr = document.createElement('p');
+        const director = document.createElement('p');
         
         cover.setAttribute('src',`./images/${genre}${index}.jpg`);
         cover.setAttribute('alt', 'cover');

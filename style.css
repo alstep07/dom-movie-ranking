@@ -23,6 +23,7 @@
 
 .header__title{
     font-size: 1.8rem;
+    cursor: pointer;
 }
 
 .navbar {
