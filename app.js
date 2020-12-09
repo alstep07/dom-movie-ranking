@@ -15,9 +15,8 @@ navBtn.addEventListener('click', function(event){
 });
 
 function render(genre){
-
-    if (main.hasChildNodes()){
-        main.firstChild.remove();
+    while (main.firstChild) {
+        main.removeChild(main.firstChild);
     }
 
     let filmCards = document.createElement('div');
@@ -63,6 +62,5 @@ function render(genre){
             filmData.classList.toggle('film__data-active');
          })
     });
-
     main.append(filmCards);
 };
