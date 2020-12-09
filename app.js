@@ -347,15 +347,10 @@ function render(genre){
         filmDescr.textContent=`${film.description}`;
         director.textContent = `${film.director}`;
         
-        filmData.appendChild(title);
-        filmData.appendChild(year);
-        filmData.appendChild(rating);
-        filmData.appendChild(director);
-        card.appendChild(cover);
-        card.appendChild(filmData);
-        card.appendChild(filmDescr);    
+        filmData.append( title, year, rating, director );
+        card.append( cover, filmData, filmDescr );
         card.classList = 'main__container__item';
-        filmCards.appendChild(card);
+        filmCards.append(card);
 
         card.addEventListener('click', function() {
             filmDescr.classList.toggle('film__descr-active');
@@ -364,5 +359,5 @@ function render(genre){
          })
     });
     
-    main.appendChild(filmCards);
+    main.append(filmCards);
 }
