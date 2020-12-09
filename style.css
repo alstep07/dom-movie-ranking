@@ -45,7 +45,7 @@
     grid-template: 1fr 1fr / 1fr 1fr 1fr;
 }
 
-.navbar__item {
+.navbar__list__item {
     display: block;
     width: 100%;
     font-size: 1.4rem;
@@ -54,30 +54,30 @@
     text-decoration: none;
 }
 
-.navbar__item:hover {
+.navbar__list__item:hover {
     color: #f7da93;
     cursor: pointer;
 }
 
-.navbar__item:focus{
+.navbar__list__item:focus{
     color: #f7da93;
     cursor: pointer;
     text-decoration: underline;
 }
 
-.main__container {
+.main {
     background: radial-gradient(#797979, #353535);
     grid-area: m;
 }
 
-.main__genre {
+.main__container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     padding: 2rem 0;
 }
 
-.main__item {
+.main__container__item {
     display: block;
     width: 250px;
     height: auto;
@@ -90,7 +90,7 @@
     margin: 1rem;
 }
 
-.main__item:hover {
+.main__container__item:hover {
     cursor: pointer;
     box-shadow: 0 0 8px 3px #daa520;
 }
@@ -183,23 +183,27 @@
         padding-left: 15%;
     }
 
+    .navbar__header {
+        display: block;
+    }
+
     .navbar__list {
         text-align: left;
         display: block;
         padding: 0;
     }
 
-    .navbar__header {
-        display: block;
+    .navbar__list__item {
+        margin-bottom: 0.5rem;
     }
 
-    .main__genre {
+    .main__container {
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
     }
 
-    .main__item {
+    .main__container__item {
         display: flex;
         width: 400px;
         height: 300px;

@@ -295,7 +295,7 @@ const movies = {
     ]
 };
 
-const main = document.querySelector('.main__container');
+const main = document.querySelector('.main');
 const navBtn = document.querySelector('.navbar__list');
 const headerBtn = document.querySelector('.header__title');
 
@@ -316,7 +316,7 @@ function render(genre){
     }
 
     let filmCards = document.createElement('div');
-    filmCards.className="main__genre";
+    filmCards.className="main__container";
     
     genre.forEach( function(film,index){
 
@@ -354,7 +354,7 @@ function render(genre){
         card.appendChild(cover);
         card.appendChild(filmData);
         card.appendChild(filmDescr);    
-        card.classList = 'main__item';
+        card.classList = 'main__container__item';
         filmCards.appendChild(card);
 
         card.addEventListener('click', function() {
