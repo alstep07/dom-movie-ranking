@@ -32,7 +32,7 @@
     grid-area: n;
 }
 
-.navbar__header {
+.navbar__title {
     display: none;
     color: #daa520;
     margin-bottom: 2rem;
@@ -45,7 +45,7 @@
     grid-template: 1fr 1fr / 1fr 1fr 1fr;
 }
 
-.navbar__list__item {
+.navbar__link {
     display: block;
     width: 100%;
     font-size: 1.4rem;
@@ -54,12 +54,12 @@
     text-decoration: none;
 }
 
-.navbar__list__item:hover {
+.navbar__link:hover {
     color: #f7da93;
     cursor: pointer;
 }
 
-.navbar__list__item:focus{
+.navbar__link:focus{
     color: #f7da93;
     cursor: pointer;
     text-decoration: underline;
@@ -137,7 +137,7 @@
 }
 
 .film__rating {
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
 }
 
 .footer {
@@ -160,8 +160,8 @@
 
 @media (min-width: 576px) {
     .navbar__list {
-        grid-template: 1fr / repeat(6,1fr);   
-    }    
+        grid-template: 1fr / repeat(6,1fr);
+    }
 }
 
 @media (min-width: 764px) {
@@ -173,7 +173,7 @@
         grid-template-areas: "h h"
                              "n m"
                              "f f";
-    } 
+    }
 
     .header__title{
         font-size: 2.5rem;
@@ -184,7 +184,7 @@
         padding-left: 15%;
     }
 
-    .navbar__header {
+    .navbar__title {
         display: block;
     }
 
@@ -194,7 +194,7 @@
         padding: 0;
     }
 
-    .navbar__list__item {
+    .navbar__link {
         padding-bottom: 0.5rem;
     }
 
